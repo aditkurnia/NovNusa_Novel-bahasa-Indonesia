@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembaca Novel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #2980b9;
+        }
+
+        .nav-button.active {
+            background-color: #2980b9;
+        }
+
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+
+        .character-card {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .amanat-list {
+            list-style-position: inside;
+            margin: 15px 0;
+        }
+
+        .amanat-list li {
+            margin-bottom: 10px;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #34495e;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Dark theme */
+        .dark-theme {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        .dark-theme .content {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        .dark-theme .character-card {
+            background-color: #2c3e50;
+            border-left-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Novel Persahabatan</h1>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-button active" onclick="showSection('amanat')">Amanat</button>
+            <button class="nav-button" onclick="showSection('karakter')">Karakter</button>
+            <button class="nav-button" onclick="showSection('cerita')">Cerita</button>
+        </div>
+
+        <div class="content" id="novel-content">
+            <!-- Content will be loaded here -->
+            <p>Pagi itu, di kantin SMA Negeri 5 Yogyakarta yang ramai, empat sahabat duduk di bangku pojok favorit mereka. Suara bel istirahat masih bergema, berbaur dengan semilir angin yang membelai dedaunan pohon beringin tua di halaman.
+
+Arif: "Nilai tryout kalian sudah keluar?"
+
+Bayu: "Sudah. Alhamdulillah dapat nilai tertinggi. UI sepertinya sudah di depan mata."
+
+Dani: "Kau ini, selalu saja membicarakan nilai. Padahal sebentar lagi kita berpisah."
+
+Rama: "Benar kata Dani. Dua minggu lagi ujian akhir, setelah itu kita akan berpencar."
+
+*Suasana hening sejenak. Hanya terdengar dentingan sendok dan piring dari kejauhan*
+
+Arif: "Bagaimana kalau kita buat kenangan terakhir?"
+
+Dani: "Maksudmu?"
+
+Arif: "Mendaki Merapi. Kita belum pernah melakukannya bersama."
+
+Bayu: "Apa? Yang benar saja! Ujian tinggal dua minggu lagi!"
+
+Rama: "Justru karena itu! Ayolah, Bayu. Sekali ini saja lepaskan buku-bukumu."
+
+*Perdebatan mulai terjadi. Bayu yang keras kepala bertahan dengan pendiriannya*
+
+Dani: "Begini saja. Kita berangkat Sabtu malam, Minggu siang sudah pulang. Kau masih punya waktu belajar."
+
+Bayu: "Tapi..."
+
+Arif: "Bayu, dengar. Nilai memang penting, tapi persahabatan juga berharga. Ini kesempatan terakhir kita."
+
+*Bayu terdiam, memandangi ketiga sahabatnya*
+
+Bayu: "Baiklah. Tapi janji kita pulang tepat waktu."
+
+*Sabtu malam, Basecamp Merapi via Selo, pukul 22.00 WIB*
+
+Rama: "Semua perlengkapan sudah siap?"
+
+Dani: "Sudah. Aku juga bawa gitar kecil!"
+
+Bayu: "Kau ini, sudah kubilang jangan bawa barang tidak penting."
+
+Arif: "Sudah, sudah. Ayo dengarkan briefing dulu dari pemandu."
+
+*Tepat pukul 00.00 WIB, mereka memulai pendakian. Udara dingin menusuk tulang*
+
+Rama: "Dingin sekali!"
+
+Dani: *bernyanyi sambil berjalan* "Separuh jiwaku pergi... Bersama separuh hatimu..."
+
+Bayu: "Bisa tidak kau diam sebentar?"
+
+Arif: "Hei, lihat! Kita sudah sampai Pos 1!"
+
+*Pukul 04.30, kabut mulai turun saat mereka di antara Pos 2 dan 3*
+
+Rama: "Gawat, kabut semakin tebal."
+
+Bayu: "Sudah kubilang ini ide buruk! Sekarang bagaimana?"
+
+Dani: "Tenang, masih ada pemandu."
+
+*Tiba-tiba hujan turun dengan derasnya*
+
+Arif: "Lihat! Ada gua di sana! Ayo berteduh!"
+
+*Di dalam gua, mereka duduk melingkar. Kedinginan dan basah kuyup*
+
+Bayu: "Maaf... tadi aku panik."
+
+Dani: *mengeluarkan gitar* "Nah, sekarang gitar ini berguna kan?"
+
+*Mereka tertawa. Dani mulai memetik gitar, bernyanyi lagu kesukaan mereka*
+
+Arif: "Teman-teman, mungkin ini terdengar berlebihan... tapi kalian adalah hadiah terbaik selama masa SMA."
+
+Rama: "Setuju. Meski kadang Bayu menyebalkan dengan nilai-nilainya."
+
+Bayu: *tertawa* "Dan kau dengan basket-basketmu itu."
+
+*Hujan reda saat fajar menyingsing. Mereka melanjutkan pendakian*
+
+*Puncak Merapi, 07.00 WIB*
+
+Dani: "Ya Allah... indah sekali..."
+
+Rama: "Lihat! Matahari terbit!"
+
+Bayu: "Ternyata... ada hal yang lebih indah dari nilai sempurna."
+
+Arif: "Foto bersama? Moment terakhir kita di puncak."
+
+*Mereka berempat berfoto dengan latar matahari terbit dan lautan awan*
+
+Dani: "Janji ya, setiap tahun kita harus mendaki bersama!"
+
+Rama: "Setuju! Kita akan punya banyak cerita dari kampus masing-masing."
+
+Bayu: "Terima kasih sudah memaksaku ikut. Ini... luar biasa."
+</p>
+<p>Arif: "Sahabat sejati memang harus sedikit memaksa kadang-kadang."</p>
+        </div>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+
+    <script>
+        const novelData = {
+            amanat: `
+                <h2>Amanat Cerita</h2>
+                <ul class="amanat-list">
+                    <li>Persahabatan sejati membutuhkan pengorbanan dan kompromi</li>
+                    <li>Ada hal-hal berharga dalam hidup yang tidak bisa diukur dengan angka</li>
+                    <li>Ketakutan bisa diatasi dengan dukungan sahabat</li>
+                    <li>Kenangan indah tercipta justru dari momen-momen tidak terduga</li>
+                    <li>Perbedaan karakter dalam persahabatan adalah anugerah</li>
+                </ul>
+            `,
+            karakter: `
+                <h2>Karakter</h2>
+                <div class="character-card">
+                    <h3>Arif</h3>
+                    <p>Pemimpin yang bijaksana dan penengah</p>
+                </div>
+                <div class="character-card">
+                    <h3>Bayu</h3>
+                    <p>Perfeksionis yang terlalu fokus pada akademik</p>
+                </div>
+                <div class="character-card">
+                    <h3>Dani</h3>
+                    <p>Seniman yang santai dan suka mencairkan suasana</p>
+                </div>
+                <div class="character-card">
+                    <h3>Rama</h3>
+                    <p>Atlet yang energik dan mendorong petualangan</p>
+                </div>
+            `,
+            cerita: `
+                <h2>Cerita</h2>
+                <p>Pagi itu, di kantin SMA Negeri 5 Yogyakarta yang ramai, empat sahabat duduk di bangku pojok favorit mereka. Suara bel istirahat masih bergema, berbaur dengan semilir angin yang membelai dedaunan pohon beringin tua di halaman.</p> <br>
+<p>
+Arif: "Nilai tryout kalian sudah keluar?"
+</p>
+<br>
+<p> Bayu: "Sudah. Alhamdulillah dapat nilai tertinggi. UI sepertinya sudah di depan mata."
+</p><br><p>
+Dani: "Kau ini, selalu saja membicarakan nilai. Padahal sebentar lagi kita berpisah."
+</p><br><p>
+Rama: "Benar kata Dani. Dua minggu lagi ujian akhir, setelah itu kita akan berpencar."
+</p><br><p>
+*Suasana hening sejenak. Hanya terdengar dentingan sendok dan piring dari kejauhan*
+</p><br><p>
+Arif: "Bagaimana kalau kita buat kenangan terakhir?"
+</p><br><p>
+Dani: "Maksudmu?"
+</p><br><p>
+Arif: "Mendaki Merapi. Kita belum pernah melakukannya bersama."
+</p><br><p>
+Bayu: "Apa? Yang benar saja! Ujian tinggal dua minggu lagi!"
+</p><br><p>
+Rama: "Justru karena itu! Ayolah, Bayu. Sekali ini saja lepaskan buku-bukumu."
+</p><br><p>
+*Perdebatan mulai terjadi. Bayu yang keras kepala bertahan dengan pendiriannya*
+</p><br><p>
+Dani: "Begini saja. Kita berangkat Sabtu malam, Minggu siang sudah pulang. Kau masih punya waktu belajar."
+</p><br><p>
+Bayu: "Tapi..."
+</p><br><p>
+Arif: "Bayu, dengar. Nilai memang penting, tapi persahabatan juga berharga. Ini kesempatan terakhir kita."
+</p><br><p>
+*Bayu terdiam, memandangi ketiga sahabatnya*
+</p><br><p>
+Bayu: "Baiklah. Tapi janji kita pulang tepat waktu."
+</p><br><p>
+*Sabtu malam, Basecamp Merapi via Selo, pukul 22.00 WIB*
+</p><br><p>
+Rama: "Semua perlengkapan sudah siap?"
+</p><br><p>
+Dani: "Sudah. Aku juga bawa gitar kecil!"
+</p><br><p>
+Bayu: "Kau ini, sudah kubilang jangan bawa barang tidak penting."
+</p><br><p>
+Arif: "Sudah, sudah. Ayo dengarkan briefing dulu dari pemandu."
+</p><br><p>
+*Tepat pukul 00.00 WIB, mereka memulai pendakian. Udara dingin menusuk tulang*
+</p><br><p>
+Rama: "Dingin sekali!"
+</p><br><p>
+Dani: *bernyanyi sambil berjalan* "Separuh jiwaku pergi... Bersama separuh hatimu..."
+</p><br><p>
+Bayu: "Bisa tidak kau diam sebentar?"
+</p><br><p>
+Arif: "Hei, lihat! Kita sudah sampai Pos 1!"
+</p><br><p>
+*Pukul 04.30, kabut mulai turun saat mereka di antara Pos 2 dan 3*
+</p><br><p>
+Rama: "Gawat, kabut semakin tebal."
+</p><br><p>
+Bayu: "Sudah kubilang ini ide buruk! Sekarang bagaimana?"
+</p><br><p>
+Dani: "Tenang, masih ada pemandu."
+</p><br><p>
+*Tiba-tiba hujan turun dengan derasnya*
+</p><br><p>
+Arif: "Lihat! Ada gua di sana! Ayo berteduh!"
+</p><br><p>
+*Di dalam gua, mereka duduk melingkar. Kedinginan dan basah kuyup*
+</p><br><p>
+Bayu: "Maaf... tadi aku panik."
+</p><br><p>
+Dani: *mengeluarkan gitar* "Nah, sekarang gitar ini berguna kan?"
+</p><br><p>
+*Mereka tertawa. Dani mulai memetik gitar, bernyanyi lagu kesukaan mereka*
+</p><br><p>
+Arif: "Teman-teman, mungkin ini terdengar berlebihan... tapi kalian adalah hadiah terbaik selama masa SMA."
+</p><br><p>
+Rama: "Setuju. Meski kadang Bayu menyebalkan dengan nilai-nilainya."
+</p><br><p>
+Bayu: *tertawa* "Dan kau dengan basket-basketmu itu."
+</p><br><p>
+*Hujan reda saat fajar menyingsing. Mereka melanjutkan pendakian*
+</p><br><p>
+*Puncak Merapi, 07.00 WIB*
+</p><br><p>
+Dani: "Ya Allah... indah sekali..."
+</p><br><p>
+Rama: "Lihat! Matahari terbit!"
+</p><br><p>
+Bayu: "Ternyata... ada hal yang lebih indah dari nilai sempurna."
+</p><br><p>
+Arif: "Foto bersama? Moment terakhir kita di puncak."
+</p><br><p>
+*Mereka berempat berfoto dengan latar matahari terbit dan lautan awan*
+</p><br><p>
+Dani: "Janji ya, setiap tahun kita harus mendaki bersama!"
+</p><br><p>
+Rama: "Setuju! Kita akan punya banyak cerita dari kampus masing-masing."
+</p><br><p>
+Bayu: "Terima kasih sudah memaksaku ikut. Ini... luar biasa."
+</p><br><p>
+Arif: "Sahabat sejati memang harus sedikit memaksa kadang-kadang."</p></p><br><p>
+-TAMAT-
+</p><br><p>
+            `
+        };
+
+        function showSection(section) {
+            document.getElementById('novel-content').innerHTML = novelData[section];
+            
+            // Update active button
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+
+        // Show amanat section by default
+        showSection('amanat');
+    </script>
+</body>
+</html>
